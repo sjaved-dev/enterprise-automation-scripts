@@ -62,6 +62,7 @@ if __name__ == "__main__":
         '{"id": 803, "value": 94.1, "status": "INVALID_JSON'     # Triggers formatting failure path
     ]
     
-    processor = DataPipelineProcessor(data_source_id="Factory_Floor_Node_A")
+    # Class names are now perfectly synchronized to prevent NameError flags
+    processor = EnterpriseTelemetryProcessor(data_source_id="Factory_Floor_Node_A")
     for raw_record in sample_stream:
         processor.transform_raw_log(raw_record)
